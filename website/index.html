@@ -227,7 +227,7 @@
         <h2>Coding agent prompts</h2>
         <p id="hero-copy"></p>
         <div class="note">
-          <strong>Public prompts</strong> live in <code>docs/prompts-data.js</code> — they show on this site. <strong>Private prompts</strong> live as Markdown in <code>unpublished/</code> in the same GitHub repo; they are not listed here.
+          These prompts are public. To add one, edit <code>website/prompts.js</code>. Prompts that should stay off the website go in <code>private-prompts/</code> as Markdown files.
         </div>
       </section>
       <div id="prompt-list"></div>
@@ -244,17 +244,17 @@
         </table>
       </article>
       <footer>
-        Public prompts: <code>docs/prompts-data.js</code>. Unpublished Markdown: <code>unpublished/</code>. Pages only publishes the <code>docs/</code> folder.
+        Public list: <code>website/prompts.js</code>. Off-website prompts: <code>private-prompts/</code>.
       </footer>
     </main>
   </div>
-  <script src="prompts-data.js"></script>
+  <script src="prompts.js"></script>
   <script>
     (function () {
       var library = window.PROMPT_LIBRARY;
       if (!library) {
         document.getElementById("prompt-list").innerHTML =
-          "<p class=\"empty\">Could not load prompts-data.js. Keep both files in the same folder.</p>";
+          "<p class=\"empty\">Could not load prompts.js. Keep it next to this HTML file.</p>";
         return;
       }
 
@@ -267,7 +267,7 @@
 
       document.getElementById("hero-copy").textContent =
         "Each paste block tells the agent not to make Claude artifacts — write a self-contained HTML file you can open instead, and keep real code in the repo. " +
-        prompts.length + " prompt" + (prompts.length === 1 ? "" : "s") + " loaded from prompts-data.js.";
+        prompts.length + " prompt" + (prompts.length === 1 ? "" : "s") + " loaded from prompts.js.";
 
       function pad(n) {
         return String(n).padStart(2, "0");
@@ -323,7 +323,7 @@
 
         if (!visible.length) {
           var empty = el("p", "empty");
-          empty.textContent = "No prompts match that search. Clear the box or add a new entry in prompts-data.js.";
+          empty.textContent = "No prompts match that search. Clear the box or add a prompt in website/prompts.js.";
           list.appendChild(empty);
           return;
         }
