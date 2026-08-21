@@ -1,28 +1,49 @@
-# My Prompts
+# theprompts
 
-Public coding-agent prompts on a static site, plus private Markdown prompts in the same GitHub repo.
+Personal prompts for Claude, Cursor, and other coding agents.
 
-| Location | Shows on website? | In GitHub repo? |
-|----------|-------------------|-----------------|
-| `docs/prompts-data.js` | Yes | Yes |
-| `unpublished/*.md` | No | Yes |
+```
+theprompts/
+  README.md              ← you are here
+  website/               ← public site (GitHub Pages)
+    index.html           ← open this in a browser
+    prompts.js           ← prompts that appear on the site
+  private-prompts/       ← prompts that do NOT appear on the site
+    template.md          ← copy this to add a private prompt
+```
 
-## Add a public prompt (on the website)
+## Two kinds of prompts
 
-Edit `docs/prompts-data.js`, save, open `docs/index.html`. Optionally run `node generate-md.js` to refresh `prompts.md`.
+| I want to… | Put it here |
+|------------|-------------|
+| Show it on the website | `website/prompts.js` |
+| Keep it in git only (not on the website) | `private-prompts/your-name.md` |
 
-## Add a private prompt (Markdown only)
+If this GitHub repo is **public**, files in `private-prompts/` are still visible on GitHub.com. They are only hidden from the website. Use a private repo for secrets.
 
-Create a file in `unpublished/`, for example `unpublished/my-prompt.md`. Copy `_template.md` in that folder. These files are in git, but GitHub Pages does **not** publish them as long as Pages is set to the `docs/` folder.
+## Add a prompt to the website
 
-**Important:** if the GitHub repo is **public**, anyone can still open those Markdown files on GitHub.com. Unpublished only means “not on the website.” For secrets, use a **private** repo.
+1. Open `website/prompts.js`.
+2. Copy the commented template at the bottom of the list.
+3. Fill in `title` and `prompt`.
+4. Save and refresh `website/index.html`.
+
+## Add a prompt that stays off the website
+
+1. Copy `private-prompts/template.md` to a new file, e.g. `private-prompts/code-review.md`.
+2. Replace the placeholder text.
+3. Commit.
+
+## Preview locally
+
+Open `website/index.html` in a browser.
 
 ## GitHub Pages
 
-1. Push this folder to GitHub (`main` branch).
-2. Repo **Settings → Pages**.
-3. Source: **Deploy from a branch**
-4. Branch: **main**, folder: **`/docs`** (not root)
-5. Site URL: `https://YOUR_USER.github.io/YOUR_REPO/`
+The site is the `website/` folder. A GitHub Action deploys it.
 
-The repo must be public unless you have GitHub Pro (Pages on private repos is a paid feature).
+In the repo: **Settings → Pages → Source → GitHub Actions**.
+
+After the next push to `main`, the site is at:
+
+https://xajeel.github.io/theprompts/

@@ -1,8 +1,8 @@
-# Prompt title
+# Title of your prompt
 
-**When to use:** describe the situation.
+When to use: describe the situation.
 
-## Ready to paste
+## Prompt
 
 ```text
 Paste your prompt here.
