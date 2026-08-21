@@ -1,17 +1,14 @@
 /**
- * Public website prompts live in this file.
+ * Prompts that appear on the public website.
  *
- * To add a prompt that SHOULD appear on GitHub Pages:
- * copy an object in PROMPT_LIBRARY.prompts, fill it in, save,
- * and refresh docs/index.html.
+ * Add a public prompt: copy the template at the bottom of this file,
+ * fill it in, save, and refresh website/index.html.
  *
- * Prompts you do NOT want on the website go in /unpublished/*.md
- * (same GitHub repo, not published by Pages).
+ * Add a private prompt (not on the website): create a Markdown file
+ * in /private-prompts instead of adding it here.
  *
  * Required: title, when, prompt
  * Optional: nav, bestFor, reportCovers, codeNote, notes
- *
- * After editing, optionally run: node generate-md.js
  */
 (function (root) {
   var defaultCodeNote =
