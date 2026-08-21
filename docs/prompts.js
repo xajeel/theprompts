@@ -2,7 +2,7 @@
  * Prompts that appear on the public website.
  *
  * Add a public prompt: copy the template at the bottom of this file,
- * fill it in, save, and refresh website/index.html.
+ * fill it in, save, and refresh docs/index.html.
  *
  * Add a private prompt (not on the website): create a Markdown file
  * in /private-prompts instead of adding it here.

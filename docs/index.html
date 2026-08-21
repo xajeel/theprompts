@@ -227,7 +227,7 @@
         <h2>Coding agent prompts</h2>
         <p id="hero-copy"></p>
         <div class="note">
-          These prompts are public. To add one, edit <code>website/prompts.js</code>. Prompts that should stay off the website go in <code>private-prompts/</code> as Markdown files.
+          These prompts are public. To add one, edit <code>docs/prompts.js</code>. Prompts that should stay off the website go in <code>private-prompts/</code> as Markdown files.
         </div>
       </section>
       <div id="prompt-list"></div>
@@ -244,7 +244,7 @@
         </table>
       </article>
       <footer>
-        Public list: <code>website/prompts.js</code>. Off-website prompts: <code>private-prompts/</code>.
+        Public list: <code>docs/prompts.js</code>. Off-website prompts: <code>private-prompts/</code>.
       </footer>
     </main>
   </div>
@@ -323,7 +323,7 @@
 
         if (!visible.length) {
           var empty = el("p", "empty");
-          empty.textContent = "No prompts match that search. Clear the box or add a prompt in website/prompts.js.";
+          empty.textContent = "No prompts match that search. Clear the box or add a prompt in docs/prompts.js.";
           list.appendChild(empty);
           return;
         }
